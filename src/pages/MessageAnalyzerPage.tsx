@@ -56,7 +56,7 @@ export default function MessageAnalyzerPage() {
           </div>
           <h1 className="text-2xl lg:text-3xl font-extrabold text-white">Message Analyzer</h1>
         </div>
-        <p className="text-navy-300">Paste a suspicious message and ScamWise will identify possible warning signs.</p>
+        <p className="text-navy-300">Paste a suspicious message and AlegadoWise will identify possible warning signs.</p>
       </div>
 
       {!result && !analyzing && (

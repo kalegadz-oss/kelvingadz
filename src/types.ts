@@ -96,4 +96,4 @@ export const RISK_CONFIG: Record<RiskLevel, {
   },
 };
 
-export const DISCLAIMER = 'ScamWise identifies potential warning signs based on the information provided. It cannot guarantee that something is legitimate or fraudulent. Always verify important claims through official sources.';
+export const DISCLAIMER = 'AlegadoWise identifies potential warning signs based on the information provided. It cannot guarantee that something is legitimate or fraudulent. Always verify important claims through official sources.';

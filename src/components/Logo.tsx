@@ -1,4 +1,4 @@
-import { ShieldCheck, ShieldAlert, Eye } from 'lucide-react';
+import { ShieldCheck, Eye } from 'lucide-react';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -8,8 +8,8 @@ interface LogoProps {
 
 export default function Logo({ size = 'md', showText = true, className = '' }: LogoProps) {
   const sizes = {
-    sm: { icon: 32, text: 'text-lg' },
-    md: { icon: 40, text: 'text-xl' },
+    sm: { icon: 32, text: 'text-base' },
+    md: { icon: 40, text: 'text-lg' },
     lg: { icon: 56, text: 'text-3xl' },
   };
   const s = sizes[size];
@@ -27,7 +27,7 @@ export default function Logo({ size = 'md', showText = true, className = '' }: L
       {showText && (
         <div className="flex flex-col leading-none">
           <span className={`font-extrabold tracking-tight ${s.text} text-white`}>
-            SCAM<span className="text-gradient">WISE</span>
+            ALEGADO<span className="text-gradient">WISE</span>
           </span>
           {size !== 'sm' && (
             <span className="text-[10px] text-navy-300 tracking-wide mt-0.5 font-medium">

@@ -33,7 +33,7 @@ export default function LandingPage({ onGetStarted, onLearnAboutScams }: Landing
               </h1>
               <p className="mt-6 text-lg text-navy-200 leading-relaxed max-w-xl">
                 Identify warning signs, understand online risks, and make safer digital decisions.
-                ScamWise helps you recognize scams before they happen.
+                AlegadoWise helps you recognize scams before they happen.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -97,8 +97,8 @@ export default function LandingPage({ onGetStarted, onLearnAboutScams }: Landing
 
       <footer className="px-6 lg:px-12 py-6 border-t border-navy-800/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-navy-400">ScamWise identifies potential warning signs. It cannot guarantee something is legitimate or fraudulent.</p>
-          <p className="text-xs text-navy-400">© 2026 ScamWise. Educational use only.</p>
+          <p className="text-xs text-navy-400">AlegadoWise identifies potential warning signs. It cannot guarantee something is legitimate or fraudulent.</p>
+          <p className="text-xs text-navy-400">© 2026 AlegadoWise. Educational use only.</p>
         </div>
       </footer>
     </div>

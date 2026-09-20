@@ -51,7 +51,7 @@ export default function DashboardPage({ onNavigate, stats }: DashboardPageProps)
     <div className="space-y-8">
       <div className="animate-fade-in-up">
         <h1 className="text-3xl font-extrabold text-white">Good day! Stay alert online.</h1>
-        <p className="text-navy-300 mt-2">Use ScamWise to check suspicious messages, links, offers, and online situations.</p>
+        <p className="text-navy-300 mt-2">Use AlegadoWise to check suspicious messages, links, offers, and online situations.</p>
       </div>
 
       <Card glass className="overflow-hidden animate-fade-in-up animate-delay-100">

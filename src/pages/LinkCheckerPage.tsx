@@ -104,7 +104,7 @@ export default function LinkCheckerPage() {
           <div className="flex items-start gap-3 rounded-xl bg-warning-500/10 border border-warning-500/30 px-4 py-3.5">
             <AlertTriangle className="w-4 h-4 text-warning-400 mt-0.5 flex-shrink-0" />
             <p className="text-xs text-warning-300 leading-relaxed">
-              ScamWise checks URL patterns only. A result does not guarantee that a website is safe or fraudulent.
+              AlegadoWise checks URL patterns only. A result does not guarantee that a website is safe or fraudulent.
             </p>
           </div>
 
