@@ -12,5 +12,16 @@ export interface Profile {
   email: string;
   phone: string | null;
   avatar_url: string | null;
+  role: 'user' | 'admin';
   updated_at: string;
+}
+
+export interface AdminUser {
+  id: string;
+  full_name: string | null;
+  email: string;
+  role: 'user' | 'admin';
+  created_at: string;
+  banned_until: string | null;
+  banned_reason: string | null;
 }

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import {
   LayoutDashboard, MessageSquareWarning, Link2, ShoppingCart, Briefcase, Gift,
   Brain, BookOpen, ClipboardList, Settings, HelpCircle, LogOut, Menu, X, User,
+  ShieldCheck,
 } from 'lucide-react';
 
 import { AuthProvider, useAuth } from '@/context/AuthContext';
@@ -20,10 +21,11 @@ import QuizPage from '@/pages/QuizPage';
 import LearningCenterPage from '@/pages/LearningCenterPage';
 import ReportsPage from '@/pages/ReportsPage';
 import SettingsPage from '@/pages/SettingsPage';
+import AdminUserManagementPage from '@/pages/AdminUserManagementPage';
 
 export type PageId =
   | 'dashboard' | 'message' | 'link' | 'shopping' | 'job' | 'prize'
-  | 'quiz' | 'learning' | 'reports' | 'settings';
+  | 'quiz' | 'learning' | 'reports' | 'settings' | 'admin';
 
 interface NavItem {
   id: PageId;
@@ -31,7 +33,7 @@ interface NavItem {
   icon: typeof LayoutDashboard;
 }
 
-const NAV_ITEMS: NavItem[] = [
+const BASE_NAV_ITEMS: NavItem[] = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'message', label: 'Message Analyzer', icon: MessageSquareWarning },
   { id: 'link', label: 'Link Checker', icon: Link2 },
@@ -43,6 +45,8 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'reports', label: 'Reports / History', icon: ClipboardList },
   { id: 'settings', label: 'Settings', icon: Settings },
 ];
+
+const ADMIN_NAV_ITEM: NavItem = { id: 'admin', label: 'User Management', icon: ShieldCheck };
 
 export default function App() {
   return (
@@ -124,11 +128,13 @@ function AppInner() {
       case 'learning': return <LearningCenterPage />;
       case 'reports': return <ReportsPage />;
       case 'settings': return <SettingsPage onLogout={handleLogout} />;
+      case 'admin': return profile?.role === 'admin' ? <AdminUserManagementPage /> : <DashboardPage onNavigate={handleNavigate} stats={{ scans: 24, warnings: 17, quizScore: 86, safetyLevel: 'Good' }} />;
       default: return <DashboardPage onNavigate={handleNavigate} stats={{ scans: 24, warnings: 17, quizScore: 86, safetyLevel: 'Good' }} />;
     }
   };
 
-  const currentPageLabel = NAV_ITEMS.find(n => n.id === currentPage)?.label || 'Dashboard';
+  const navItems = profile?.role === 'admin' ? [...BASE_NAV_ITEMS, ADMIN_NAV_ITEM] : BASE_NAV_ITEMS;
+  const currentPageLabel = navItems.find(n => n.id === currentPage)?.label || 'Dashboard';
 
   const SidebarBottom = () => (
     <div className="border-t border-navy-800/40 p-3 space-y-1">
@@ -146,7 +152,7 @@ function AppInner() {
 
   const NavLinks = () => (
     <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
-      {NAV_ITEMS.map(item => {
+      {navItems.map(item => {
         const Icon = item.icon;
         const active = currentPage === item.id;
         return (
